@@ -1,0 +1,37 @@
+import java.util.Scanner; 
+public class Main {
+  public static void main(String[] args) {
+    Scanner teclado=new Scanner (System.in); 
+    boolean sonoptimas;
+    String alerta; 
+    float temperaturaoptima, humedadoptima, luminosidadoptima, temperaturaactual, humedadactual, luminosidadactual, fechaactual, tiempoderegadooptimo; 
+    System.out.println ("Escriba la fecha actual"); 
+    fechaactual=teclado.nextFloat(); 
+    System.out.println ("Escriba la temperatura optima de regado"); 
+    temperaturaoptima=teclado.nextFloat(); 
+    System.out.println ("Escriba la humedad optima de regado"); 
+    humedadoptima=teclado.nextFloat(); 
+    System.out.println ("Escriba la luminosidad optima de regado"); 
+    luminosidadoptima=teclado.nextFloat(); 
+    System.out.println ("Escriba el tiempo de regado optimo "); 
+    tiempoderegadooptimo=teclado.nextFloat(); 
+    System.out.println ("Escriba la temperatura actual"); 
+    temperaturaactual=teclado.nextFloat(); 
+    System.out.println ("Escriba la humedad actual"); 
+    humedadactual=teclado.nextFloat(); 
+    System.out.println ("Escriba la luminosidad actual"); 
+    luminosidadactual=teclado.nextFloat(); 
+    if (humedadoptima==humedadactual&& temperaturaoptima==temperaturaactual && luminosidadoptima==luminosidadactual){
+      sonoptimas=true; 
+    } else {
+      sonoptimas=false; 
+    }
+    if (sonoptimas==true){
+      alerta="Sus condiciones son optimas"; 
+      System.out.println(alerta); 
+    } else {
+      alerta="Sus condiciones NO son optimas. Por lo tanto la debe regar ";   
+      System.out.println(alerta+tiempoderegadooptimo+" minutos."); 
+    }
+  }
+}
