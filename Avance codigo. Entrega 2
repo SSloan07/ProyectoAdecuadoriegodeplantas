@@ -1,8 +1,8 @@
 import java.util.Scanner;
+
 public class Main {
   public static void main(String[] args) {
-    Scanner teclado = new Scanner(System.in);  
-    System.out.println("A continuación se presenta un avance de más del 25% del codigo de nuestro programa principal");
+    Scanner teclado = new Scanner(System.in);
     boolean sonOptimas;
     int primeraVez, planta;
     String alerta;
@@ -97,7 +97,7 @@ public class Main {
     System.out.println("4-----------------------Ninguna de las anteriores");
     tipo = teclado.nextInt();
     while (tipo > 4 || tipo < 1) {
-      System.out.println("Numero fuera de rango. Escriba nuevamente su numero. Recuerde, entre 1 y 3");
+      System.out.println("Numero fuera de rango. Escriba nuevamente su numero. Recuerde, entre 1 y 4");
       tipo = teclado.nextInt();
     }
     return tipo;
@@ -115,3 +115,4 @@ public class Main {
     return primeraVez;
   }
 }
+
