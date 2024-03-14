@@ -1,37 +1,117 @@
-import java.util.Scanner; 
+import java.util.Scanner;
+
 public class Main {
   public static void main(String[] args) {
-    Scanner teclado=new Scanner (System.in); 
-    boolean sonoptimas;
-    String alerta; 
-    float temperaturaoptima, humedadoptima, luminosidadoptima, temperaturaactual, humedadactual, luminosidadactual, fechaactual, tiempoderegadooptimo; 
-    System.out.println ("Escriba la fecha actual"); 
-    fechaactual=teclado.nextFloat(); 
-    System.out.println ("Escriba la temperatura optima de regado"); 
-    temperaturaoptima=teclado.nextFloat(); 
-    System.out.println ("Escriba la humedad optima de regado"); 
-    humedadoptima=teclado.nextFloat(); 
-    System.out.println ("Escriba la luminosidad optima de regado"); 
-    luminosidadoptima=teclado.nextFloat(); 
-    System.out.println ("Escriba el tiempo de regado optimo "); 
-    tiempoderegadooptimo=teclado.nextFloat(); 
-    System.out.println ("Escriba la temperatura actual"); 
-    temperaturaactual=teclado.nextFloat(); 
-    System.out.println ("Escriba la humedad actual"); 
-    humedadactual=teclado.nextFloat(); 
-    System.out.println ("Escriba la luminosidad actual"); 
-    luminosidadactual=teclado.nextFloat(); 
-    if (humedadoptima==humedadactual&& temperaturaoptima==temperaturaactual && luminosidadoptima==luminosidadactual){
-      sonoptimas=true; 
+    Scanner teclado = new Scanner(System.in);
+    boolean sonOptimas;
+    int primeraVez, planta;
+    String alerta;
+    float temperaturaOptima, humedadOptima, luminosidadOptima, temperaturaActual;
+    float humedadActual, luminosidadActual, fechaActual, tiempoDeRegadoOptimo;
+    planta = menu();
+    primeraVez = primeraVez();
+    if (primeraVez==1 || planta==4){
+      System.out.println("Escriba la fecha actual");
+      fechaActual = teclado.nextFloat();
+      System.out.println("Escriba la temperatura optima en grados celcius");
+      temperaturaOptima = teclado.nextFloat();
+      System.out.println("Escriba la humedad optima");
+      humedadOptima = teclado.nextFloat();
+      System.out.println("Escriba la luminosidad optima en horas");
+      luminosidadOptima = teclado.nextFloat();
+      System.out.println("Escriba el tiempo de regado");
+      tiempoDeRegadoOptimo = teclado.nextFloat();
+      System.out.println("Escriba la temperatura actual en grados celcius");
+      temperaturaActual = teclado.nextFloat();
+      System.out.println("Escriba la humedad actual");
+      humedadActual = teclado.nextFloat();
+      System.out.println("Escriba la luminosidad actual en horas");
+      luminosidadActual = teclado.nextFloat();
     } else {
-      sonoptimas=false; 
+      if (planta==1){
+        System.out.println("Escriba la fecha actual");
+        fechaActual = teclado.nextFloat();
+        temperaturaOptima = 23;
+        humedadOptima = 60;
+        luminosidadOptima = 6;
+        tiempoDeRegadoOptimo = 3;
+        System.out.println("Escriba la temperatura actual en grados celcius");
+        temperaturaActual = teclado.nextFloat();
+        System.out.println("Escriba la humedad actual");
+        humedadActual = teclado.nextFloat();
+        System.out.println("Escriba la luminosidad actual en horas");
+        luminosidadActual = teclado.nextFloat();
+      } else{
+        if (planta==2){
+          System.out.println("Escriba la fecha actual");
+          fechaActual = teclado.nextFloat();
+          temperaturaOptima = 20;
+          humedadOptima = 50;
+          luminosidadOptima = 5;
+          tiempoDeRegadoOptimo = 2;
+          System.out.println("Escriba la temperatura actual en grados celcius");
+          temperaturaActual = teclado.nextFloat();
+          System.out.println("Escriba la humedad actual");
+          humedadActual = teclado.nextFloat();
+          System.out.println("Escriba la luminosidad actual en horas");
+          luminosidadActual = teclado.nextFloat();
+        } else {
+          System.out.println("Escriba la fecha actual");
+          fechaActual = teclado.nextFloat();
+          temperaturaOptima = 30;
+          humedadOptima = 35;
+          luminosidadOptima = 7;
+          tiempoDeRegadoOptimo = 1;
+          System.out.println("Escriba la temperatura actual en grados celcius");
+          temperaturaActual = teclado.nextFloat();
+          System.out.println("Escriba la humedad actual");
+          humedadActual = teclado.nextFloat();
+          System.out.println("Escriba la luminosidad actual en horas");
+          luminosidadActual = teclado.nextFloat();
+        }
+      }
     }
-    if (sonoptimas==true){
-      alerta="Sus condiciones son optimas"; 
-      System.out.println(alerta); 
+
+    if ((humedadOptima == humedadActual) && (temperaturaOptima == temperaturaActual) && (luminosidadOptima == luminosidadActual)) {
+      sonOptimas = true;
     } else {
-      alerta="Sus condiciones NO son optimas. Por lo tanto la debe regar ";   
-      System.out.println(alerta+tiempoderegadooptimo+" minutos."); 
+      sonOptimas = false;
     }
+
+    if (sonOptimas) {
+      alerta = "Sus condiciones son optimas";
+      System.out.println(alerta);
+    } else {
+      alerta = "Sus condiciones NO son optimas. Por lo tanto la debe regar ";
+      System.out.println(alerta + tiempoDeRegadoOptimo + " minutos.");
+    }
+  }
+
+  public static int menu() {
+    Scanner teclado = new Scanner(System.in);
+    int tipo;
+    System.out.println("Perfecto, ahora seleccione su planta");
+    System.out.println("1-----------------------Girasol");
+    System.out.println("2-----------------------Rosa");
+    System.out.println("3-----------------------Cactus");
+    System.out.println("4-----------------------Ninguna de las anteriores");
+    tipo = teclado.nextInt();
+    while (tipo > 4 || tipo < 1) {
+      System.out.println("Numero fuera de rango. Escriba nuevamente su numero. Recuerde, entre 1 y 3");
+      tipo = teclado.nextInt();
+    }
+    return tipo;
+  }
+
+  public static int primeraVez() {
+    Scanner teclado = new Scanner(System.in);
+    int primeraVez;
+    System.out.println("¿Es su primera vez en usar el programa?. Escriba 1 si lo es y 2 si no");
+    primeraVez = teclado.nextInt();
+    while (primeraVez > 2 || primeraVez < 1) {
+      System.out.println("Número fuera de rango. Recuerde, 1 para sí, 2 para no");
+      primeraVez = teclado.nextInt();
+    }
+    return primeraVez;
   }
 }
