@@ -8,8 +8,8 @@ public class Main {
     String alerta;
     float temperaturaOptima, humedadOptima, luminosidadOptima, temperaturaActual;
     float humedadActual, luminosidadActual, fechaActual, tiempoDeRegadoOptimo;
-    planta = menu();
     primeraVez = primeraVez();
+    planta = menu();
     if (primeraVez==1 || planta==4){
       System.out.println("Escriba la fecha actual");
       fechaActual = teclado.nextFloat();
