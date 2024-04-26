@@ -1,0 +1,17 @@
+package com.mycompany.planta;
+import vistas.vista_MyPanel;
+/**
+ *
+ * @author user
+ */
+public class MyPanel {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        // TODO code application logic here
+        vista_MyPanel vista_MyPanel = new vista_MyPanel();
+        vista_MyPanel.setVisible(true);
+    }
+}
