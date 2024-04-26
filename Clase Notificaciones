@@ -1,0 +1,42 @@
+package vistas;
+
+/**
+ *
+ * @author user
+ */
+import java.util.ArrayList; 
+public class Notificacion {
+    public int tipo;
+    public String mensaje;
+    public int dia;
+    public int mes;
+    public int year; 
+    
+    public Notificacion(
+            int tipo,
+            String mensaje,
+            int dia,
+            int mes,
+            int year){
+        this.tipo=tipo;
+        this.mensaje=mensaje;
+        this.dia=dia;
+        this.mes=mes;
+        this.year=year;
+    }   
+
+    public String mostrarnoti(int dia, int 
+    mes, int year) {
+      String m = (dia + "/" + mes + "/" + year);
+      return m; 
+    }  
+     public String mostrarTipo(int tipo,boolean condicion) {
+      if (condicion == true){
+               String m = ("1");
+               return m;
+     }else{
+          String m= ("2");
+          return m;
+      }
+    } 
+}
