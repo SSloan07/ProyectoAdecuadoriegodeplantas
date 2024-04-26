@@ -1,0 +1,132 @@
+package vistas;
+
+
+/**
+ *
+ * @author user
+ */
+public class planta {
+    public float temperatura_actual;
+   public float temperatura_optima;
+   public float humedad_actual;
+   public float humedad_optima;
+   public float luminosidad_actual;
+   public float luminosidad_optima; 
+   public int tiempo_regado;
+   /*public int dia;
+   public int mes;
+   public int year;
+   public int tipo_de_planta;*/
+      public planta (
+             float temperatura_actual,
+              float temperatura_optima,
+              float humedad_actual,
+              float humedad_optima,
+             float luminosidad_actual,
+              float luminosidad_optima,
+              int tiempo_regado){
+            //  int dia,
+            //  int mes,
+            //  int year,
+            // int tipo_de_planta){
+         this.temperatura_actual=temperatura_actual;
+          this.temperatura_optima=temperatura_optima;
+          this.humedad_actual=humedad_actual;
+          this.humedad_optima=humedad_optima;
+          this.luminosidad_actual=luminosidad_actual;
+          this.luminosidad_optima=luminosidad_optima;
+          this.tiempo_regado=tiempo_regado;
+          //this.dia=dia;
+          //this.mes=mes;
+          //this.year=year;
+          //this.tipo_de_planta=tipo_de_planta;
+          
+      }
+    public boolean primeraVez(int respuesta) {
+        boolean si = true; 
+        int primeraVez = respuesta;
+        if (primeraVez == 2 ) {
+            si=false;
+            return si;
+        }else{
+            si=true;
+            return si;
+        }
+    }
+    public void mostrarTiempoRegado(int tiempo) {
+       System.out.println("Tiempo de riego recomendado: " + tiempo + " minutos");
+   }
+      public boolean comparar_cond_actyop (
+              float temperatura_actual,
+              float temperatura_optima,
+              float humedad_actual,
+              float humedad_optima,
+              float luminosidad_actual,
+              float luminosidad_optima){
+             boolean So;
+                if ((temperatura_actual == temperatura_optima) && (humedad_actual == humedad_optima) && (luminosidad_actual == luminosidad_optima)) {
+                 So = true;
+                } else {
+                 So = false;
+                }
+                  return So;
+                  
+                  
+   }
+         public int[] crearlistdbym(int [] array, boolean comparar) { 
+           //Declaracion
+         if (comparar==true){
+          array[0]=array[0]+1; 
+         } else{
+          array[1]=array[1]+1;  
+         }
+          return array; 
+
+    }
+    public String mostrartiemporegado(int tiempo_regado, String message) {
+        message = (tiempo_regado + " minutos.");
+        return message;
+    }
+    public Boolean com(int dia) {
+        boolean aux = true;
+        if (dia > 31 || dia < 1) {
+            aux = false;
+            return aux;
+        }
+        return aux;
+    }
+
+    public Boolean com2(int mes) {
+        boolean aux = true;
+        if (mes > 12 || mes < 1) {
+            aux = false;
+            return aux;
+        }
+        return aux;
+    }
+
+    public String comprobardia(int dia, String message) {
+        while (dia > 31 || dia < 1) {
+            message = ("Día fuera de rango. Escribalo nuevamente");
+            return message;
+        }
+        return message;
+    }
+
+    public String comprobarmes(int mes, String message) {
+        while (mes > 12 || mes < 1) {
+            message = ("Mes fuera de rango. Escribalo nuevamente");
+            return message;
+        }
+        return message;
+    }
+       public String mostrar_evaluacioncondact(boolean c, String message) {
+     if (c==true){
+       message=("Sus condiciones son optimas"); 
+     } else{
+       message=("Sus condiciones NO son optimas"); 
+     }
+     return message; 
+   }
+    
+}
