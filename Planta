@@ -1,10 +1,5 @@
 package vistas;
 
-
-/**
- *
- * @author user
- */
 public class planta {
     public float temperatura_actual;
    public float temperatura_optima;
@@ -13,10 +8,7 @@ public class planta {
    public float luminosidad_actual;
    public float luminosidad_optima; 
    public int tiempo_regado;
-   /*public int dia;
-   public int mes;
-   public int year;
-   public int tipo_de_planta;*/
+
       public planta (
              float temperatura_actual,
               float temperatura_optima,
@@ -25,10 +17,7 @@ public class planta {
              float luminosidad_actual,
               float luminosidad_optima,
               int tiempo_regado){
-            //  int dia,
-            //  int mes,
-            //  int year,
-            // int tipo_de_planta){
+
          this.temperatura_actual=temperatura_actual;
           this.temperatura_optima=temperatura_optima;
           this.humedad_actual=humedad_actual;
@@ -36,10 +25,7 @@ public class planta {
           this.luminosidad_actual=luminosidad_actual;
           this.luminosidad_optima=luminosidad_optima;
           this.tiempo_regado=tiempo_regado;
-          //this.dia=dia;
-          //this.mes=mes;
-          //this.year=year;
-          //this.tipo_de_planta=tipo_de_planta;
+
           
       }
     public boolean primeraVez(int respuesta) {
