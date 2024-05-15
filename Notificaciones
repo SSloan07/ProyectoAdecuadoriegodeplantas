@@ -1,9 +1,5 @@
 package vistas;
 
-/**
- *
- * @author user
- */
 import java.util.ArrayList; 
 public class Notificacion {
     public int tipo;
